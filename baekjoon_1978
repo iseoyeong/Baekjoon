@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-int count_minority(int n, int num[]) {
+int count_primeNumber(int n, int num[]) {
 	int cnt = 0;
 	int i, j;
 
@@ -25,5 +25,5 @@ int main(void) {
 		scanf("%d", &numbers[i]);
 	}
 
-	printf("%d", count_minority(n, numbers));
+	printf("%d", count_primeNumber(n, numbers));
 }

@@ -1,17 +1,12 @@
 n = int(input())
 p = list(map(int, input().split())) #map 함수를 이용하면 for문 없이 여러 개 정수 입력 가능
-flag = 0
 
 for i in range(n-1, 0, -1): #뒤에서부터 loop
         if p[i-1] < p[i]: #뒷 값이 앞 값보다 크다면
                 for j in range(n-1, 0, -1):
                         if p[i-1] < p[j]:
                                 p[i-1], p[j] = p[j], p[i-1] #swap
-                                p = p[:i] + sorted(p[i:]) 
-                                flag = 1
-                                break
-        if flag == 1:
-            print(*p)
-            break
-if flag == 0:
-    print(-1)
+                                p = p[:i] + sorted(p[i:]) #부분 정렬할 때 sorted()함수 사용
+                                print(*p) #앞에 *을 써주면 [] 없이 출력 가능
+                                exit()
+print(-1)
